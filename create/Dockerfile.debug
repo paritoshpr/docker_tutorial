@@ -1,0 +1,21 @@
+FROM python:3.7-alpine 
+
+#update linux distribution
+RUN apk add --no-cache gcc musl-dev linux-headers
+
+#create working directory
+WORKDIR /home/NASA_HOME/
+
+#copy code from your machine (host) to the container youre creating
+COPY ./ /home/NASA_HOME/
+
+#make sure code can be executed with permissions
+RUN chmod -R +x /home/NASA_HOME/
+
+#install any python dependencies
+RUN pip install -r requirements.txt 
+
+#run your code
+#CMD python ./hello-world.py
+
+CMD tail -f /dev/null
