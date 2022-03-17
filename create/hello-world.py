@@ -1,4 +1,4 @@
 import os, sys
 from hello_world_func import *
 
-hello_world_func("Paritosh")
+hello_world_func("NASA@Mars!")
